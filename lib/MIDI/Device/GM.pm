@@ -10,7 +10,8 @@ use MIDI::Device ();
 
 =head1 DESCRIPTION
 
-C<MIDI::Device::GM> represents General MIDI Level 1 messages.
+C<MIDI::Device::GM> represents General MIDI Level 1 control-change
+messages.
 
 =head1 FUNCTIONS
 
@@ -26,7 +27,7 @@ sub transmits {
 
 =head2 receives
 
-These are the MIDI control change messages recognized by General MIDI
+These are MIDI control change-messages recognized by General MIDI
 Level 1:
 
    1 Modulation # vibrato effect (pitch, loudness, brighness)
