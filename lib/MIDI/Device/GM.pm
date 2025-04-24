@@ -26,7 +26,8 @@ sub transmits {
 
 =head2 receives
 
-These are the MIDI control change messages recognized by General MIDI Level 1:
+These are the MIDI control change messages recognized by General MIDI
+Level 1:
 
    1 Modulation # vibrato effect (pitch, loudness, brighness)
    7 Volume
