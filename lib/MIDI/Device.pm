@@ -1,6 +1,6 @@
 package MIDI::Device;
 
-# ABSTRACT: MIDI hardware device access
+# ABSTRACT: MIDI device access
 
 our $VERSION = '0.0100';
 
@@ -16,7 +16,7 @@ use namespace::clean;
 
 =head1 DESCRIPTION
 
-A C<MIDI::Device> represents and talks to MIDI hardware devices.
+A C<MIDI::Device> represents and talks to MIDI devices.
 
 =head1 ATTRIBUTES
 
