@@ -6,9 +6,16 @@ our $VERSION = '0.0100';
 
 =encoding utf8
 
+=head1 SYNOPSIS
+
+  use MIDI::Device ();
+  my $transmits = MIDI::Device::transmits();
+  my $receives  = MIDI::Device::receives();
+
 =head1 DESCRIPTION
 
-Base class for C<MIDI::Device> modules.
+Point of reference for C<MIDI::Device> modules. It contains common
+MIDI control-change messages in the C<receives> hash-reference.
 
 =head1 FUNCTIONS
 
