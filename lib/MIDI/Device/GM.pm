@@ -1,7 +1,5 @@
 package MIDI::Device::GM;
 
-use MIDI::Device ();
-
 =head1 SYNOPSIS
 
   use MIDI::Device::GM ();
