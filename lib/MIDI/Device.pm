@@ -24,7 +24,8 @@ sub transmits {
 
 =head2 receives
 
-These are the MIDI control change messages recognized generically:
+These are the MIDI control-change messages that are generically
+recognized:
 
     0 Bank Select
     1 Modulation # vibrato effect (pitch, loudness, brighness)
@@ -113,6 +114,10 @@ sub receives {
 }
 
 1;
+
+=head1 SEE ALSO
+
+L<https://nickfever.com/music/midi-cc-list>
 
 =cut
 
