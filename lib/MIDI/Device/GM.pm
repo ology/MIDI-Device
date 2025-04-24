@@ -14,12 +14,6 @@ C<MIDI::Device::GM> represents General MIDI Level 1 messages.
 
 =head1 FUNCTIONS
 
-=head2 new
-
-  $device = MIDI::Device::GM->new;
-
-Create a new C<MIDI::Device::GM> object.
-
 =head2 transmits
 
 Nothing
