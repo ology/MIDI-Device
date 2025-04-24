@@ -46,7 +46,7 @@ These are the MIDI control change messages recognized by General MIDI Level 1:
 =cut
 
 sub receives {
-    my $receives = {
+    return {
          1 => { name => 'Modulation' },
          7 => { name => 'Volume' },
         11 => { name => 'Expression' },
@@ -54,7 +54,6 @@ sub receives {
         85 => { name => 'Portamento' },
         91 => { name => 'Reverb' },
     };
-    return $receives;
 }
 
 1;
