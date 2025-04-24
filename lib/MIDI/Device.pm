@@ -4,6 +4,8 @@ package MIDI::Device;
 
 our $VERSION = '0.0100';
 
+=encoding utf8
+
 =head1 DESCRIPTION
 
 Base class for C<MIDI::Device> modules.
