@@ -12,8 +12,6 @@ Base class for C<MIDI::Device> modules.
 
 =head1 METHODS
 
-Create a new C<MIDI::Device> object.
-
 =head2 transmits
 
 Nothing by default
