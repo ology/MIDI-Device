@@ -54,12 +54,6 @@ sub receives {
         85 => { name => 'Portamento' },
         91 => { name => 'Reverb' },
     };
-    my $defaults = MIDI::Device::receives();
-    for my $default (keys %$defaults) {
-        unless (exists $receives->{$default}) {
-            $receives->{$default} = undef;
-        }
-    }
     return $receives;
 }
 
