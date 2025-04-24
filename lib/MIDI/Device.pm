@@ -8,9 +8,7 @@ our $VERSION = '0.0100';
 
 Base class for C<MIDI::Device> modules.
 
-=head1 ATTRIBUTES
-
-=head1 METHODS
+=head1 FUNCTIONS
 
 =head2 transmits
 
