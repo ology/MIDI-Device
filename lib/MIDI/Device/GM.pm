@@ -1,5 +1,7 @@
 package MIDI::Device::GM;
 
+use MIDI::Device ();
+
 =head1 SYNOPSIS
 
   use MIDI::Device::GM ();
@@ -44,7 +46,7 @@ These are the MIDI control change messages recognized by General MIDI Level 1:
 =cut
 
 sub receives {
-    return {
+    my $receives = {
          1 => { name => 'Modulation' },
          7 => { name => 'Volume' },
         11 => { name => 'Expression' },
@@ -52,6 +54,13 @@ sub receives {
         85 => { name => 'Portamento' },
         91 => { name => 'Reverb' },
     };
+    my $defaults = MIDI::Device::receives();
+    for my $default (keys %$defaults) {
+        unless (exists $receives->{$default}) {
+            $receives->{$default} = undef;
+        }
+    }
+    return $receives;
 }
 
 1;
