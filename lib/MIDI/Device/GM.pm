@@ -5,8 +5,8 @@ use MIDI::Device ();
 =head1 SYNOPSIS
 
   use MIDI::Device::GM ();
-
-  my $gm = MIDI::Device::GM::receives();
+  my $transmits = MIDI::Device::GM::transmits();
+  my $receives  = MIDI::Device::GM::receives();
 
 =head1 DESCRIPTION
 
