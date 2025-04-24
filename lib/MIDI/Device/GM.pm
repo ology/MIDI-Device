@@ -34,10 +34,10 @@ sub transmits {
 
 These are the MIDI control change messages recognized by General MIDI Level 1:
 
-   1 Modulation - vibrato effect (pitch, loudness, brighness)
+   1 Modulation # vibrato effect (pitch, loudness, brighness)
    7 Volume
-  11 Expression - percentage of volume
-  64 Sustain pedal - 0 to 63 = Off, 64 to 127 = On
+  11 Expression # percentage of volume
+  64 Sustain pedal # 0 to 63 = Off, 64 to 127 = On
   85 Portamento
   91 Reverb
 
