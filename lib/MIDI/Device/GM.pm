@@ -12,9 +12,7 @@ use MIDI::Device ();
 
 C<MIDI::Device::GM> represents General MIDI Level 1 messages.
 
-=head1 ATTRIBUTES
-
-=head1 METHODS
+=head1 FUNCTIONS
 
 =head2 new
 
