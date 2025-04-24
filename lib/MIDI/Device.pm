@@ -31,7 +31,7 @@ sub transmits {
 
 =head2 receives
 
-These are the MIDI control-change messages that are generically
+These are the MIDI control-change messages that are commonly
 recognized:
 
     0 Bank Select
