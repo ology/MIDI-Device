@@ -31,21 +31,3 @@ Create a new C<MIDI::Device> object.
 =cut
 
 1;
-
-__END__
-
-=head1 SEE ALSO
-
-L<MIDI::RtController> - Related module
-
-L<MIDI::RtController::Filter::CC> - Related module
-
-L<MIDI::RtController::Filter::Tonal> - Related module
-
-L<MIDI::RtController::Filter::Math> - Related module
-
-L<MIDI::RtController::Filter::Drums> - Related module
-
-L<Moo>
-
-=cut
