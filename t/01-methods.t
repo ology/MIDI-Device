@@ -16,7 +16,7 @@ subtest Device => sub {
 subtest GM => sub {
     is_deeply MIDI::Device::GM::transmits(), {}, 'transmits';
     my $got = MIDI::Device::GM::receives();
-    is $got->{0}, undef, 'receives';
+    ok not exists $got->{0}, 'receives';
     is $got->{64}{name}, 'Sustain pedal', 'receives';
     is_deeply $got->{64}{off}, [0 .. 63], 'receives';
 };
