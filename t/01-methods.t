@@ -4,16 +4,15 @@ use warnings;
 
 use Test::More;
 
-use_ok 'MIDI::Device';
-use_ok 'MIDI::Device::GM';
-
 subtest Device => sub {
+    use_ok 'MIDI::Device';
     is_deeply MIDI::Device::transmits(), {}, 'transmits';
     my $got = MIDI::Device::receives();
     is $got->{0}{name}, 'Bank Select', 'receives';
 };
 
 subtest GM => sub {
+    use_ok 'MIDI::Device::GM';
     is_deeply MIDI::Device::GM::transmits(), {}, 'transmits';
     my $got = MIDI::Device::GM::receives();
     ok not(exists $got->{0}), 'receives';
