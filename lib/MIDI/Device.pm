@@ -97,6 +97,22 @@ has name => (
     is => 'ro',
 );
 
+=head2 module
+
+  $module = $device->module;
+
+Name of the module. This is the name of a subclass, like
+C<'MIDI::Device::DX7'>.
+
+Default: C<MIDI::Device>
+
+=cut
+
+has module => (
+    is      => 'ro',
+    default => 'MIDI::Device',
+);
+
 =head2 shared
 
   $shared = $device->shared;
@@ -110,7 +126,7 @@ has shared => (
 );
 sub _build_shared {
     my ($self) = @_;
-    my $shared = eval { dist_dir('MIDI-Device') };
+    my $shared = eval { dist_dir($self->module) };
     $shared = './share/' unless $shared; # try author local
     croak "File $shared doesn't exist: $!" unless -e $shared;
     return $shared;
