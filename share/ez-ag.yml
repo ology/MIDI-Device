@@ -1,5 +1,5 @@
 name: "EZ-AG"
-manufacturer: "Korg"
+manufacturer: "Yamaha"
 port:
     in: "generic"
     out: "generic"
