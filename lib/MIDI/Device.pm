@@ -34,7 +34,7 @@ Make a L<YAML> file named for the device (in lower-case, preferrably).
 Save it in the distribution F<share> directory. Make a package to
 instantiate the device object.
 
-F<share/my-device.yml>:
+YAML file F<share/my-device.yml>:
 
   name: "My Device"
   manufacturer: "Some Company, Inc."
@@ -48,7 +48,7 @@ F<share/my-device.yml>:
       name: "Bank Select"
     ...
 
-F<lib/MIDI/Device/My_Device.pm>:
+Perl module F<lib/MIDI/Device/My_Device.pm>:
 
   package MIDI::Device::My_Device;
 
