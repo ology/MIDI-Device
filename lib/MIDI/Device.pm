@@ -84,7 +84,7 @@ Perl module F<lib/MIDI/Device/My_Device.pm>:
 
   has module => (
       is      => 'ro',
-      default => 'MIDI::Device::DX7',
+      default => 'MIDI::Device::My_Device',
   );
 
   =head2 name
@@ -95,16 +95,16 @@ Perl module F<lib/MIDI/Device/My_Device.pm>:
 
   has name => (
       is      => 'ro',
-      default => 'dx7',
+      default => 'my_device',
   );
 
   =head1 METHODS
 
   =head2 new
 
-    $device = MIDI::Device::DX7->new;
+    $device = MIDI::Device::My_Device->new;
 
-  Return a new C<MIDI::Device::DX7> object.
+  Return a new C<MIDI::Device::My_Device> object.
 
   =cut
 
