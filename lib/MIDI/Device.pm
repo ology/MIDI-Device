@@ -95,7 +95,7 @@ But these can also contain control value attributes:
 
 sub cc {
     my ($self) = @_;
-    return $self->_device->{device}{control_change};
+    return $self->_device->{control_change};
 }
 
 =head2 manufacturer
@@ -108,7 +108,7 @@ Manufacturer of the device
 
 sub manufacturer {
     my ($self) = @_;
-    return $self->_device->{device}{manufacturer};
+    return $self->_device->{manufacturer};
 }
 
 =head2 new
@@ -142,7 +142,7 @@ Input port name of the device
 
 sub port_in {
     my ($self) = @_;
-    return $self->_device->{device}{port}{in};
+    return $self->_device->{port}{in};
 }
 
 =head2 port_out
@@ -155,7 +155,7 @@ Output port name of the device
 
 sub port_out {
     my ($self) = @_;
-    return $self->_device->{device}{port}{out};
+    return $self->_device->{port}{out};
 }
 
 1;
