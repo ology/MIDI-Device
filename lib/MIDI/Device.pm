@@ -74,6 +74,42 @@ Perl module F<lib/MIDI/Device/My_Device.pm>:
 
   =cut
 
+  =head1 ATTRIBUTES
+
+  =head2 module
+
+  The name of this module: C<'MIDI::Device::DX7'>.
+
+  =cut
+
+  has module => (
+      is      => 'ro',
+      default => 'MIDI::Device::DX7',
+  );
+
+  =head2 name
+
+  Device name: C<dx7>
+
+  =cut
+
+  has name => (
+      is      => 'ro',
+      default => 'dx7',
+  );
+
+  =head1 METHODS
+
+  =head2 new
+
+    $device = MIDI::Device::DX7->new;
+
+  Return a new C<MIDI::Device::DX7> object.
+
+  =cut
+
+  1;
+
 =head1 ATTRIBUTES
 
 =head2 name
@@ -126,8 +162,8 @@ has shared => (
 );
 sub _build_shared {
     my ($self) = @_;
-    my $shared = eval { dist_dir($self->module) };
-    $shared = './share/' unless $shared; # try author local
+    my $shared = eval { dist_dir($self->module) } || './share/';
+    say $shared;
     croak "File $shared doesn't exist: $!" unless -e $shared;
     return $shared;
 }
@@ -185,13 +221,13 @@ MIDI device on the system.
 =cut
 
 sub BUILD {
-    my ($self, $args) = @_;
-    if ($args->{name}) {
-        my $shared = $self->shared . $args->{name} . '.yml';
-        croak "File $shared doesn't exist: $!" unless -e $shared;
-        my $device = LoadFile($shared);
-        $self->_device($device);
-    }
+    my ($self) = @_;
+    return unless $self->name;
+
+    my $file = $self->shared . $self->name . '.yml';
+    croak "File $file doesn't exist" unless -e $file;
+
+    $self->_device(LoadFile($file));
 }
 
 =head2 port_in

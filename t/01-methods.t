@@ -12,7 +12,7 @@ use_ok $module;
 
 subtest device => sub {
     throws_ok { $module->new(name => 'foo') }
-        qr/No such file or directory/, 'bogus device';
+        qr/doesn't exist/, 'bogus device';
     my $obj = new_ok $module => [ name => 'hpd-15' ];
     is $obj->name, 'hpd-15', 'name';
     is $obj->manufacturer, 'Roland', 'manufacturer';
