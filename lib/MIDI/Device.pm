@@ -89,7 +89,7 @@ List entries are typically of the form:
 
 But these can also contain other attributes:
 
-  { number => 1, name => 'Modulation', off => [0 .. 63], on => [64 .. 127] }
+  { number => 1, name => 'Modulation', off => 0, on => 127 }
 
 =cut
 
