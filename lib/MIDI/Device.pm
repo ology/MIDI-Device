@@ -30,7 +30,7 @@ metadata and control change messages.
 
 =head2 Extending
 
-Make a L<YAML> file named for the device (in lower-case, preferrably).
+Make a L<YAML> file named for the device (preferrably in lower-case).
 Save it in the distribution F<share> directory. Make a package to
 instantiate the device object.
 
