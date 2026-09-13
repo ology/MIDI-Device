@@ -2,7 +2,7 @@ device:
   name: "SE-02"
   manufacturer: "Roland"
   port:
-    - in: "SE-02"
+      in: "SE-02"
       out: "SE-02"
   control_change:
     - number: 5

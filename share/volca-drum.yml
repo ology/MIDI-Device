@@ -2,7 +2,7 @@ device:
   name: "Volca Drum"
   manufacturer: "Korg"
   port:
-    - in: "USB MIDI Interface"
+      in: "USB MIDI Interface"
       out: "USB MIDI Interface"
   control_change:
     - number: 10

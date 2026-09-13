@@ -2,7 +2,7 @@ device:
   name: "Kaoss Pad V"
   manufacturer: "Korg"
   port:
-    - in: "KAOSS PAD KPV KPV_CTRL_IN"
+      in: "KAOSS PAD KPV KPV_CTRL_IN"
       out: "KAOSS PAD KPV KPV_CTRL_OUT"
   control_change:
     - number: 0

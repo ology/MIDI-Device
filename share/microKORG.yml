@@ -2,7 +2,7 @@ device:
   name: "microKORG"
   manufacturer: "Korg"
   port:
-    - in: "ESI MIDIMATE eX Port 1"
+      in: "ESI MIDIMATE eX Port 1"
       out: "ESI MIDIMATE eX Port 2"
   control_change:
     - number: 1
