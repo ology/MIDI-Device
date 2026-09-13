@@ -52,7 +52,7 @@ Perl module F<lib/MIDI/Device/My_Device.pm>:
 
   package MIDI::Device::My_Device;
 
-  # ABSTRACT: My Device MIDI device
+  # ABSTRACT: My Device MIDI device metadata
 
   our $VERSION = '0.0100';
 
