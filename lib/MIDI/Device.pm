@@ -89,7 +89,7 @@ Perl module F<lib/MIDI/Device/My_Device.pm>:
 
   =head2 name
 
-  Device name: C<dx7>
+  Device name: C<my_device>
 
   =cut
 
