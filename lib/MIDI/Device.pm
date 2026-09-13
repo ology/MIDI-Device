@@ -39,8 +39,8 @@ YAML file F<share/my-device.yml>:
   name: "My Device"
   manufacturer: "Some Company, Inc."
   port:
-      in: "generic"  # or the port names for class-compliant devices
-      out: "generic"
+      in: "My MIDI Port In"  # "generic" for a non-class-compliant device
+      out: "My MIDI Port Out"
   control_change:
     - number: 0
       name: "Bank Select"
