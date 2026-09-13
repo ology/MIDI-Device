@@ -13,9 +13,8 @@ use_ok $module;
 subtest device => sub {
     throws_ok { $module->new(name => 'foo') }
         qr/No such file or directory/, 'bogus device';
-    my $expect = 'hpd-15';
-    my $obj = new_ok $module => [ name => $expect ];
-    is $obj->name, $expect, 'name';
+    my $obj = new_ok $module => [ name => 'hpd-15' ];
+    is $obj->name, 'hpd-15', 'name';
     is $obj->manufacturer, 'Roland', 'manufacturer';
     is $obj->port_in, 'generic', 'port_in';
     is $obj->port_out, 'generic', 'port_out';
