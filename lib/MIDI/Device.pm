@@ -9,7 +9,7 @@ use v5.35;
 use Moo;
 use strictures 2;
 use Carp qw(croak);
-use Data::Dumper::Compact qw(ddc);
+# use Data::Dumper::Compact qw(ddc);
 use File::ShareDir qw(dist_dir);
 use YAML::XS qw(LoadFile);
 use namespace::clean;
