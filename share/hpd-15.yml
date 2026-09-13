@@ -2,8 +2,8 @@ device:
   name: "HandSonic HPD-15"
   manufacturer: "Roland"
   port:
-      in: "USB MIDI Interface"
-      out: "USB MIDI Interface"
+      in: "generic"
+      out: "generic"
   control_change:
     - number: 0
       name: "Bank Select"

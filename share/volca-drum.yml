@@ -2,8 +2,8 @@ device:
   name: "Volca Drum"
   manufacturer: "Korg"
   port:
-      in: "USB MIDI Interface"
-      out: "USB MIDI Interface"
+      in: "generic"
+      out: "generic"
   control_change:
     - number: 10
       name: "Pan"
@@ -11,7 +11,7 @@ device:
       name: "Sound Source Select - Layer 1"
     - number: 15
       name: "Sound Source Select - Layer 2"
-    - number: 15
+    - number: 16
       name: "Sound Source Select - Both"
     - number: 17
       name: "Level / Gain - Layer 1"
