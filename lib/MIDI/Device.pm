@@ -225,7 +225,7 @@ sub BUILD {
     return unless $self->name;
 
     my $file = $self->shared . $self->name . '.yml';
-    croak "File $file doesn't exist" unless -e $file;
+    croak "File $file doesn't exist: $!" unless -e $file;
 
     $self->_device(LoadFile($file));
 }
