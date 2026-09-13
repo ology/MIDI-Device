@@ -78,7 +78,7 @@ Perl module F<lib/MIDI/Device/My_Device.pm>:
 
   =head2 module
 
-  The name of this module: C<'MIDI::Device::DX7'>.
+  The name of this module: C<'MIDI::Device::My_Device'>.
 
   =cut
 
