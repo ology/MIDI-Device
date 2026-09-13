@@ -163,7 +163,6 @@ has shared => (
 sub _build_shared {
     my ($self) = @_;
     my $shared = eval { dist_dir($self->module) } || './share/';
-    say $shared;
     croak "File $shared doesn't exist: $!" unless -e $shared;
     return $shared;
 }
@@ -193,7 +192,8 @@ But these can also contain control value attributes:
 
 sub cc {
     my ($self) = @_;
-    return $self->_device->{control_change};
+    my $cc = $self->_device->{control_change} || {};
+    return $cc;
 }
 
 =head2 manufacturer
