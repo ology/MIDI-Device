@@ -42,6 +42,25 @@ has name => (
     is => 'ro',
 );
 
+=head2 shared
+
+  $shared = $device->shared;
+
+Name of the device shared directory
+
+=cut
+
+has shared => (
+    is => 'lazy',
+);
+sub _build_shared {
+    my ($self) = @_;
+    my $shared = eval { dist_dir('MIDI-Device') };
+    $shared = './share/' unless $shared; # try author local
+    croak "File $shared doesn't exist: $!" unless -e $shared;
+    return $shared;
+}
+
 has _device => (
     is      => 'rw',
     default => sub { {} },
@@ -72,7 +91,6 @@ Manufacturer of the device
 
 sub manufacturer {
     my ($self) = @_;
-    say 'HELLO';
     return $self->_device->{device}{manufacturer};
 }
 
@@ -90,8 +108,7 @@ MIDI device on the system.
 sub BUILD {
     my ($self, $args) = @_;
     if ($args->{name}) {
-        my $shared = eval { dist_dir('MIDI-Device') . $args->{name} . '.yml' };
-        $shared = "./share/$args->{name}.yml" unless $shared; # try author local
+        my $shared = $self->shared . $args->{name} . '.yml';
         croak "File $shared doesn't exist: $!" unless -e $shared;
         my $device = LoadFile($shared);
         $self->_device($device);
