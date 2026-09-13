@@ -83,6 +83,14 @@ has _device => (
 
 Control change numbers and decriptions
 
+This typically is of the form:
+
+  { number => 1, name => 'Modulation', ... }
+
+But this can also contain other attributes:
+
+  { number => 1, name => 'Modulation', off => [0 .. 63], on => [64 .. 127] }
+
 =cut
 
 sub cc {
