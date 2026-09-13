@@ -8,7 +8,10 @@ use v5.35;
 
 use Moo;
 use strictures 2;
+use Carp qw(croak);
 use Data::Dumper::Compact qw(ddc);
+use File::ShareDir qw(dist_dir);
+use YAML::XS qw(LoadFile);
 use namespace::clean;
 
 =encoding utf8
@@ -25,6 +28,25 @@ use namespace::clean;
 Point of reference for C<MIDI::Device> modules. Contains device
 metadata and the control change message numbers.
 
+=head1 ATTRIBUTES
+
+=head2 name
+
+  $name = $device->name;
+
+Name of the device
+
+=cut
+
+has name => (
+    is => 'ro',
+);
+
+has _device => (
+    is      => 'rw',
+    default => sub { {} },
+);
+
 =head1 METHODS
 
 =head2 cc
@@ -37,7 +59,7 @@ Control change numbers and decriptions
 
 sub cc {
     my ($self) = @_;
-    return $self->_device->{control_change};
+    return $self->_device->{device}{control_change};
 }
 
 =head2 manufacturer
@@ -50,20 +72,8 @@ Manufacturer of the device
 
 sub manufacturer {
     my ($self) = @_;
-    return $self->_device->{manufacturer};
-}
-
-=head2 name
-
-  $name = $device->name;
-
-Name of the device
-
-=cut
-
-sub name {
-    my ($self) = @_;
-    return $self->_device->{name};
+    say 'HELLO';
+    return $self->_device->{device}{manufacturer};
 }
 
 =head2 new
@@ -79,7 +89,13 @@ MIDI device on the system.
 
 sub BUILD {
     my ($self, $args) = @_;
-    say ddc $args;
+    if ($args->{name}) {
+        my $shared = eval { dist_dir('MIDI-Device') . $args->{name} . '.yml' };
+        $shared = "./share/$args->{name}.yml" unless $shared; # try author local
+        croak "File $shared doesn't exist: $!" unless -e $shared;
+        my $device = LoadFile($shared);
+        $self->_device($device);
+    }
 }
 
 =head2 port_in
@@ -92,7 +108,7 @@ Input port name of the device
 
 sub port_in {
     my ($self) = @_;
-    return $self->_device->{port}{in};
+    return $self->_device->{device}{port}{in};
 }
 
 =head2 port_out
@@ -105,15 +121,7 @@ Output port name of the device
 
 sub port_out {
     my ($self) = @_;
-    return $self->_device->{port}{out};
+    return $self->_device->{device}{port}{out};
 }
-
-1;
-
-=head1 SEE ALSO
-
-L<https://nickfever.com/music/midi-cc-list>
-
-=cut
 
 1;
