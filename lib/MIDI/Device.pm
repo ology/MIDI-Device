@@ -36,6 +36,15 @@ metadata and the control change message numbers.
 
 Name of the device
 
+Known device names:
+
+  EZ-AG
+  hpd-15
+  kaoss-pad-v
+  microKORG
+  se-02
+  volca-drum
+
 =cut
 
 has name => (
