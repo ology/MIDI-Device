@@ -26,7 +26,7 @@ use namespace::clean;
 =head1 DESCRIPTION
 
 Point of reference for C<MIDI::Device> modules. Contains device
-metadata and control change message numbers.
+metadata and control change messages.
 
 =head1 ATTRIBUTES
 
