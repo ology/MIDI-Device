@@ -28,6 +28,52 @@ use namespace::clean;
 Point of reference for C<MIDI::Device::*> modules. Contains device
 metadata and control change messages.
 
+=head2 Extending
+
+Make a L<YAML> file named for the device (in lower-case, preferrably).
+Save it in the distribution F<share> directory. Make a package to
+instantiate the device object.
+
+F<share/my-device.yml>:
+
+  name: "My Device"
+  manufacturer: "Some Company, Inc."
+  port:
+      in: "generic"  # or the port names for class-compliant devices
+      out: "generic"
+  control_change:
+    - number: 0
+      name: "Bank Select"
+    - number: 32
+      name: "Bank Select"
+    ...
+
+F<lib/MIDI/Device/My_Device.pm>:
+
+  package MIDI::Device::My_Device;
+
+  # ABSTRACT: My Device MIDI device
+
+  our $VERSION = '0.0100';
+
+  use Moo;
+  extends 'MIDI::Device';
+
+  =encoding utf8
+
+  =head1 SYNOPSIS
+
+    use MIDI::Device::My_Device ();
+    my $device = MIDI::Device::My_Device->new;
+    print "Device: ", join(", ", $device->name, $device->manufacturer), "\n";
+    my $ccs = $device->cc; # [ { number => 0, name => 'Bank Select' }, ... ]
+
+  =head1 DESCRIPTION
+
+  My device metadata.
+
+  =cut
+
 =head1 ATTRIBUTES
 
 =head2 name
