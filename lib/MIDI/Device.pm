@@ -37,7 +37,7 @@ instantiate the device object.
 YAML file F<share/my-device.yml>:
 
   name: "My Device"
-  manufacturer: "Some Company, Inc."
+  manufacturer: "My Company, Inc."
   port:
       in: "My MIDI Port In"  # "generic" for a non-class-compliant device
       out: "My MIDI Port Out"
