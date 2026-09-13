@@ -83,11 +83,11 @@ has _device => (
 
 List of control change numbers and names
 
-This typically is of the form:
+List entries are typically of the form:
 
   { number => 1, name => 'Modulation' }
 
-But this can also contain other attributes:
+But these can also contain other attributes:
 
   { number => 1, name => 'Modulation', off => [0 .. 63], on => [64 .. 127] }
 
