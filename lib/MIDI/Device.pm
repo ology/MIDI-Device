@@ -87,7 +87,7 @@ List entries are typically of the form:
 
   { number => 1, name => 'Modulation' }
 
-But these can also contain other attributes:
+But these can also contain control value attributes:
 
   { number => 42, name => 'Switch', off => 0, on => 127 }
 
