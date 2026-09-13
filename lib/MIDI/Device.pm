@@ -38,10 +38,10 @@ Name of the device
 
 Known device names:
 
-  EZ-AG
+  ez-ag
   hpd-15
   kaoss-pad-v
-  microKORG
+  microkorg
   se-02
   volca-drum
 
