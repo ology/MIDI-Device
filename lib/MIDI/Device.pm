@@ -130,7 +130,8 @@ Known device names:
 =cut
 
 has name => (
-    is => 'ro',
+    is       => 'ro',
+    required => 1,
 );
 
 =head2 module
@@ -145,8 +146,9 @@ Default: C<MIDI::Device>
 =cut
 
 has module => (
-    is      => 'ro',
-    default => 'MIDI::Device',
+    is       => 'ro',
+    default  => 'MIDI::Device',
+    required => 1,
 );
 
 =head2 shared
