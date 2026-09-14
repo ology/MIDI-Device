@@ -19,7 +19,7 @@ use namespace::clean;
 =head1 SYNOPSIS
 
   use MIDI::Device ();
-  my $device = MIDI::Device->new(name => 'MIDI Device Name'); # e.g. 'hpd-15'
+  my $device = MIDI::Device->new(name => 'MIDI device name'); # e.g. 'hpd-15'
   print 'Device: ', join(", ", $device->name, $device->manufacturer), "\n";
   my $ccs = $device->cc; # [ { number => 1, name => 'Modulation' }, ... ]
 
