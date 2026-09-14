@@ -232,6 +232,19 @@ sub BUILD {
     $self->_device(LoadFile($file));
 }
 
+=head2 note_on
+
+  $note_on = $device->note_on;
+
+The C<note_on> section of the device
+
+=cut
+
+sub note_on {
+    my ($self) = @_;
+    return $self->_device->{note_on};
+}
+
 =head2 port_in
 
   $port_in = $device->port_in;
