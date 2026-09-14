@@ -3,6 +3,13 @@ manufacturer: "Korg"
 port:
     in: "generic"
     out: "generic"
+note_on:
+  - 60 # part 1
+  - 62 # part 2
+  - 64 # part 3
+  - 65 # part 4
+  - 67 # part 5
+  - 69 # part 6
 control_change:
   - number: 10
     name: "Pan"
