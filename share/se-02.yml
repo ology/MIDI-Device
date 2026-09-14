@@ -3,6 +3,9 @@ manufacturer: "Roland"
 port:
     in: "SE-02"
     out: "SE-02"
+note_on:
+    min: 0
+    max: 127
 control_change:
   - number: 5
     name: "Glide Time"

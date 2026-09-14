@@ -3,6 +3,9 @@ manufacturer: "Yamaha"
 port:
     in: "generic"
     out: "generic"
+note_on:
+    min: 0
+    max: 127
 control_change:
   - number: 0
     name: "Bank Select"
