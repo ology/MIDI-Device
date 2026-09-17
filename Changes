@@ -1,6 +1,7 @@
 Revision history for MIDI-Device
 
 {{$NEXT}}
+  - Fix synopsis.
 
 0.0101 2026-09-17 11:52:36
   - Fix copyright year.

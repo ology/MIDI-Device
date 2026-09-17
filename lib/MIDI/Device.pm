@@ -2,7 +2,7 @@ package MIDI::Device;
 
 # ABSTRACT: MIDI device access
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 use Moo;
 use strictures 2;
@@ -17,7 +17,7 @@ use namespace::clean;
 =head1 SYNOPSIS
 
   use MIDI::Device ();
-  my $device = MIDI::Device->new(name => 'MIDI device name'); # e.g. 'hpd-15'
+  my $device = MIDI::Device->new(name => 'midi-device-name'); # e.g. 'hpd-15'
   print 'Device: ', join(", ", $device->name, $device->manufacturer), "\n";
   my $ccs = $device->cc; # [ { number => 1, name => 'Modulation' }, ... ]
 
