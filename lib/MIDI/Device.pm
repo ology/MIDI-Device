@@ -28,6 +28,8 @@ use namespace::clean;
 Point of reference for C<MIDI::Device::*> modules. Contains device
 metadata and control change messages.
 
+It is my hope to add more useful metadata and methods...
+
 =head2 Extending
 
 Make a L<YAML> file named for the device (preferrably in lower-case).
