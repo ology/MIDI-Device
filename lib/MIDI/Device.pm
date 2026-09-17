@@ -4,8 +4,6 @@ package MIDI::Device;
 
 our $VERSION = '0.0100';
 
-use v5.35;
-
 use Moo;
 use strictures 2;
 use Carp qw(croak);
