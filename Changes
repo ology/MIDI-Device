@@ -1,6 +1,8 @@
 Revision history for MIDI-Device
 
 {{$NEXT}}
+  - Change the "name" key to "note."
+  - Add the MIDI Rock: Stone joystick.
 
 0.0102 2026-09-17 12:17:25
   - Fix synopsis.

@@ -2,7 +2,7 @@ package MIDI::Device;
 
 # ABSTRACT: MIDI device access
 
-our $VERSION = '0.0102';
+our $VERSION = '0.0103';
 
 use Moo;
 use strictures 2;
