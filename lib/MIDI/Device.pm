@@ -125,12 +125,12 @@ Name of the device
 
 Known device names:
 
-  ez-ag
-  hpd-15
-  kaoss-pad-v
-  microkorg
-  se-02
-  volca-drum
+  ez-ag       # Yamaha
+  hpd-15      # Roland
+  kaoss-pad-v # Korg
+  microkorg   # Korg
+  se-02       # Roland
+  volca-drum  # Korg
 
 =cut
 
