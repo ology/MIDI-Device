@@ -284,4 +284,10 @@ sub port_out {
     return $self->_device->{port}{out};
 }
 
+=head1 SEE ALSO
+
+L<MIDI::Device::DX7>
+
+=cut
+
 1;
