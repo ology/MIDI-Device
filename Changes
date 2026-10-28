@@ -1,6 +1,8 @@
 Revision history for MIDI-Device
 
 {{$NEXT}}
+
+0.0200 2026-10-27 19:35:02
   - Change the "name" key to "note."
   - Add the MIDI Rock: Stone joystick.
   - Add the pitch_wheel_change method.
