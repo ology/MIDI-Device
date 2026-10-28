@@ -213,9 +213,9 @@ sub manufacturer {
 
 =head2 new
 
-  $device = MIDI::Device->new($port_name)
+  $device = MIDI::Device->new(name => $port_name)
 
-Return a new C<MIDI::Device> object given a port name of an available
+Return a new C<MIDI::Device> object given a port B<name> of an available
 MIDI device on the system.
 
 =for Pod::Coverage BUILD
