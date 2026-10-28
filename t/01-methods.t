@@ -17,7 +17,7 @@ subtest throws => sub {
 
 subtest HPD15 => sub {
     my $obj = new_ok $module => [ name => 'hpd-15' ];
-    is $obj->note, 'hpd-15', 'note';
+    is $obj->name, 'hpd-15', 'name';
     is $obj->manufacturer, 'Roland', 'manufacturer';
     is $obj->port_in, 'generic', 'port_in';
     is $obj->port_out, 'generic', 'port_out';
@@ -26,7 +26,7 @@ subtest HPD15 => sub {
 
 subtest VolcaDrum => sub {
     my $obj = new_ok $module => [ name => 'volca-drum' ];
-    is $obj->note, 'volca-drum', 'note';
+    is $obj->name, 'volca-drum', 'name';
     is $obj->manufacturer, 'Korg', 'manufacturer';
     is $obj->port_in, 'generic', 'port_in';
     is $obj->port_out, 'generic', 'port_out';
@@ -36,7 +36,7 @@ subtest VolcaDrum => sub {
 
 subtest microKORG => sub {
     my $obj = new_ok $module => [ name => 'microkorg' ];
-    is $obj->note, 'microkorg', 'note';
+    is $obj->name, 'microkorg', 'name';
     is $obj->manufacturer, 'Korg', 'manufacturer';
     is $obj->port_in, 'generic', 'port_in';
     is $obj->port_out, 'generic', 'port_out';
