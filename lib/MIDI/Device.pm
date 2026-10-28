@@ -1,6 +1,6 @@
 package MIDI::Device;
 
-# ABSTRACT: MIDI device access
+# ABSTRACT: MIDI device metadata
 
 our $VERSION = '0.0200';
 
