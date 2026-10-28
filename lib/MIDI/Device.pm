@@ -2,7 +2,7 @@ package MIDI::Device;
 
 # ABSTRACT: MIDI device access
 
-our $VERSION = '0.0103';
+our $VERSION = '0.0200';
 
 use Moo;
 use strictures 2;
@@ -43,9 +43,9 @@ YAML file F<share/my-device.yml>:
       out: "My MIDI Port Out"
   control_change:
     - number: 0
-      name: "Bank Select"
+      note: "Bank Select"
     - number: 32
-      name: "Bank Select"
+      note: "Bank Select"
     ...
 
 Perl module F<lib/MIDI/Device/My_Device.pm>:
@@ -66,7 +66,7 @@ Perl module F<lib/MIDI/Device/My_Device.pm>:
     use MIDI::Device::My_Device ();
     my $device = MIDI::Device::My_Device->new;
     print "Device: ", join(", ", $device->name, $device->manufacturer), "\n";
-    my $ccs = $device->cc; # [ { number => 0, name => 'Bank Select' }, ... ]
+    my $ccs = $device->cc; # [ { number => 0, note => 'Bank Select' }, ... ]
 
   =head1 DESCRIPTION
 
@@ -180,15 +180,15 @@ has _device => (
 
   $ccs = $device->cc;
 
-List of control change numbers and names
+List of control change numbers and notes.
 
 List entries are typically of the form:
 
-  { number => 1, name => 'Modulation' }
+  { number => 1, note => 'Modulation' }
 
 But these can also contain control value attributes:
 
-  { number => 42, name => 'Switch', off => 0, on => 127 }
+  { number => 42, note => 'Switch', off => 0, on => 127 }
 
 =cut
 
@@ -243,6 +243,19 @@ The C<note_on> section of the device
 sub note_on {
     my ($self) = @_;
     return $self->_device->{note_on};
+}
+
+=head2 pitch_bend
+
+  $pitch_bend = $device->pitch_bend;
+
+The C<pitch_wheel_change> section of the device.
+
+=cut
+
+sub pitch_bend {
+    my ($self) = @_;
+    return $self->_device->{pitch_wheel_change};
 }
 
 =head2 port_in
