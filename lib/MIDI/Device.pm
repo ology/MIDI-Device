@@ -23,12 +23,17 @@ use namespace::clean;
 
 =head1 DESCRIPTION
 
-Point of reference for C<MIDI::Device::*> modules. Contains device
-metadata and control change messages.
+This module is a point of reference for other C<MIDI::Device::*> modules. It
+contains device metadata. Currently, this is:
 
-It is my hope to add more useful metadata and methods...
+  name
+  manufacturer
+  note_on
+  control_change
+  program_change
+  pitch_wheel_change
 
-=head2 Extending
+=head1 EXTENDING
 
 Make a L<YAML> file named for the device (preferably in lower-case).
 Save it in the distribution F<share> directory. Make a package to
