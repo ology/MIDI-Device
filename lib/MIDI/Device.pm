@@ -2,7 +2,7 @@ package MIDI::Device;
 
 # ABSTRACT: MIDI device metadata
 
-our $VERSION = '0.0201';
+our $VERSION = '0.0300';
 
 use Moo;
 use strictures 2;
