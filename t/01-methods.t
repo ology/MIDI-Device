@@ -22,6 +22,10 @@ subtest HPD15 => sub {
     is $obj->port_in, 'generic', 'port_in';
     is $obj->port_out, 'generic', 'port_out';
     is_deeply $obj->cc->[0], { note => 'Bank Select', number => 0 }, 'cc';
+    my $got = $obj->find('control_change', 'pan');
+    is_deeply $got, [{ note => "Panpot (PAN knob)", number => 10 }], 'find';
+    $got = $obj->find('bugus', 'pan');
+    is_deeply $got, undef, 'find';
 };
 
 subtest VolcaDrum => sub {

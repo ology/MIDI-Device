@@ -19,7 +19,8 @@ use namespace::clean;
   use MIDI::Device ();
   my $device = MIDI::Device->new(name => 'midi-device-name'); # e.g. 'hpd-15'
   print 'Device: ', join(", ", $device->name, $device->manufacturer), "\n";
-  my $ccs = $device->cc; # [ { number => 1, name => 'Modulation' }, ... ]
+  my $ccs = $device->cc; # [{ number => 1, name => 'Modulation' }, ...]
+  my $found = $device->find('control_change', 'pan'); # [{ note => "Panpot (PAN knob)", number => 10 }]
 
 =head1 DESCRIPTION
 
@@ -287,6 +288,24 @@ Output port name of the device
 sub port_out {
     my ($self) = @_;
     return $self->_device->{port}{out};
+}
+
+=head2 find
+
+  $found = $device->find('control_change', 'pan');
+
+Search the device for an item.
+
+=cut
+
+sub find {
+    my ($self, $key, $value) = @_;
+    return unless exists $self->_device->{$key};
+    my @found;
+    for my $i (@{ $self->_device->{$key} }) {
+        push @found, $i if $i->{note} =~ /$value/i;
+    }
+    return \@found;
 }
 
 =head1 SEE ALSO

@@ -1,6 +1,7 @@
 Revision history for MIDI-Device
 
 {{$NEXT}}
+  - Add the `find()` method.
 
 0.0201 2026-10-28 16:16:52
   - Improve documentation.
