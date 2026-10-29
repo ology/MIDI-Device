@@ -1,6 +1,8 @@
 Revision history for MIDI-Device
 
 {{$NEXT}}
+
+0.0300 2026-10-28 22:08:33
   - Add the `find()` method.
 
 0.0201 2026-10-28 16:16:52
